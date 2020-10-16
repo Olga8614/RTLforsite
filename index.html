@@ -16,186 +16,468 @@
 
             <h1>Basics on BiDi/RTL and challenges</h1>
             <h2>What countries and how many people speak Arabic and Hebrew</h2>
+            
             <p>
-                Arabic and Hebrew languages are native to more than 600 million people in developing economies. Arabic language is native for over 295 million people, plus it is used by 1.6 billion Muslims worldwide. There are over 5 million Hebrew native speakers all over the world. Also, there are over 310 million people who speak one of ten major languages based on the Arabic script and writing system: Farsi (Persian), Urdu, Dari, Pashto, Uyghur, Sindhi, Malay (Jawi), Kazakh, Kurdish, and Kyrgyz. In this article we will focus mostly on Arabic (Ar) and Hebrew (He), those are languages already supported by Esri software. 
+                More than 600 million people in fast developing regions are using scripts that are written mostly in right-to-left (RTL for short) direction. Arabic language is native for over 295 million people. There are over 5 million Hebrew native speakers throughout the world. Also, there are over 310 million people who speak other languages with scripts based on Arabic alphabet.  Esri supports localization of Arabic (AR) and Hebrew (HE), but our products should support (accept input) in all RTL languages. Though in this article we will concentrate mostly on AR and HE, most of the rules and information here apply to other BiDi languages as well. 
             </p>
-            <p><img src="img/ArabWorld.png"  alt="Map of the Arab World" title='Arabic speaking countries'> Arabic speaking countries
-            </p>
-            <p>Arabic was just a small language several years ago used on internet. In 2015, it did not feature even in the top ten languages used on the internet, but has grown to become one of the most used languages online. As of 2013, only 37% of Arabic speakers were connected to the internet, but today there are more than 168.1 million Arabic internet users worldwide. The language just misses out on the top three spots, but it can change in near future. </p>
-            <p><img src='img/top-10-language-used-on-the-internet-today-statistics.png' alt='Top 10 languages used on the Internet today' title='Top 10 languages used on the Internet today'>Top 10 languages used on the Internet today</p>
+            <figure>
+                <img src="img/ArabWorld.png"  alt="Map of the Arab World" title='Arabic speaking countries'>
+                <figcaption>A map showing with green the Arab world, where Arabic is the primary language. Source: <a href='https://www.worldatlas.com/articles/arabic-speaking-countries.html' target="_blank">https://www.worldatlas.com/articles/arabic-speaking-countries.html</a></figcaption>
+            </figure>
+            
+            <p>Several years ago Arabic was not widely used on internet. In 2015, it did not feature even in the top ten languages used on the internet. It has grown to be the fourth most used languages on the Internet by now. As of 2013, only 37% of Arabic speakers were connected to the internet, but today there are more than 168.1 million Arabic-speaking internet users worldwide. The language just misses out on the top three spots, but it can change in near future. </p>
+                        
+            <figure>
+                <img src='img/Top10languages.png' alt='Top 10 languages used on the Internet today' title='Top 10 languages used on the Internet today'>
+                <figcaption>Top 10 languages used on the Internet today</figcaption>
+            </figure>
+            
             
             <h2>Why these languages are called Bidirectional</h2>
-            <p>Text written in the Hebrew and Arabic languages is often referred to as bidirectional, or "BiDi" for short. Arabic and Hebrew are written predominantly right-to-left. Numbers are written with the most significant digit left-most, just as in European or other left-to-right text.</p>
-            <p><img src='img/EuropeanFlowWithNumbers.png' alt='European flow of numbers and words (everything from left to right)' title='European flow of numbers and words (everything from left to right)'><br>European flow of numbers and words (everything from left to right)</p>
-            <p><img src='img/ArabicFlowWithNumbers.png' alt='Arabic flow of numbers and words (mixed directions)' title='Arabic flow of numbers and words (mixed directions)'><br>Same text in Arabic. Flow of numbers and words (words go from right to left; numbers go from left to right)</p>
             
-            <p>Languages written in left-to-right scripts are often mixed in, so the complete document is bidirectional in nature, a mix of both right-to-left and left-to-right writing. </p>
-            <p><img src='img/BiDiTextNumbers.png' alt='BiDi text' title='BiDi text'><br>Text says: The following new tools are available in the ArcGIS Enterprise portal</p>
+            <p>Text written in the Hebrew and Arabic languages is often referred to as bidirectional, or "BiDi" for short. Arabic and Hebrew are written predominantly right-to-left (LTR for short). Numbers are written with the most significant digit left-most, just as in English or other left-to-right text.</p>
+            <figure>
+                <img src='img/EuropeanFlowWithNumbers.png' alt='European flow of numbers and words (everything from left to right)' title='European flow of numbers and words (everything from left to right)'><figcaption>European flow of numbers and words (everything from left to right)</figcaption>
+            </figure>
             
-            <p>BiDi languages pretty much never go vertical. The only intuitive way to achieve vertical BiDi script is to start with a standard line of horizontal RTL text and rotate it 90 degrees counterclockwise so that it points downward.</p>
-
-            <p><img src="img/ArabicVertical.jpg"  alt="Incorrect vertical text direction" title="Incorrect vertical text direction"> <img src="img/ArabicRTL.jpg"  alt="Correct text direction" title='Correct RTL text direction'></p>
+            <figure>
+                <img src='img/ArabicFlowWithNumbers.png' alt='Arabic flow of numbers and words (mixed directions)' title='Arabic flow of numbers and words (mixed directions)'><figcaption>Same text in Arabic. Flow of numbers and words (words go from right to left; numbers go from left to right)</figcaption>
+            </figure>
+            
             <p>
-                Reading right-to-left means the whole experience — not just the line of text — is right-to-left. Books are alphabetized on a shelf RTL. Books open from what Westerners would consider the back cover. A sequence of instructional steps must go in RTL direction. 
+                Languages written in left-to-right scripts, for example product names or citations, are often inserted, so the complete document is bidirectional in nature, a mix of both right-to-left and left-to-right writing. 
+            </p>
+            <figure>
+                <img src='img/BiDiTextNumbers.png' alt='BiDi text' title='BiDi text'>
+                <figcaption>Text says: The following new tools are available in the ArcGIS Enterprise portal</figcaption>
+            </figure>
+            
+            <p>
+                BiDi languages are rarely used vertically. The only intuitive way to achieve vertical BiDi script is to start with a standard line of horizontal RTL text and rotate it 90 degrees counterclockwise so that it points downward.
+            </p>
+            <figure>
+                <img src="img/ArabicVertical.jpg"  alt="Incorrect vertical text direction" title="Incorrect vertical text direction"> <img src="img/ArabicRTL.jpg"  alt="Correct text direction" title='Correct RTL text direction'>
+                <figcaption>The same text written vertically (incorrect) and horizontally (correct)
+                </figcaption>
+            </figure>
+            
+            <p>
+                Reading right-to-left means the whole experience — not just the line of text — is right-to-left. Books are alphabetized on a shelf RTL. Books open from what Westerners would consider the back cover. A sequence of instructional steps must go in RTL direction.  
             </p>
             
-            <h2>Strong and Weak/Neutral characters</h2>
-            <p>The order of characters in memory (logical) is not the same as the order in which they are displayed (visual). The set of rules applied by the software to produce the correct order at the time of display are described by the Unicode Bidirectional Algorithm, or 'bidi algorithm' for short.</p>
-            <p>How does the software know whether this is a sequence of left-to-right or right-to-left characters? Because each character in Unicode has an associated directional property. Most letters are <strong>strongly typed</strong> as LTR (left-to-right). Letters from right-to-left scripts are strongly typed as RTL (right-to-left).</p>
-            <p>The order in which text is displayed depends on the base direction assigned to the phrase, paragraph or block that contains it.</p>
-            <p>Spaces and punctuation are not strongly typed as either LTR or RTL, because they may be used in either type of script. They are therefore classed as <strong>neutral</strong> or <strong>weak</strong> characters. A neutral character between two strongly typed characters that have the same directional type will also assume that directionality. </p>
-            <p>More information about Strong & Weak characters can be found in <a href='https://www.w3.org/International/articles/inline-bidi-markup/uba-basics' target="_blank">Unicode Bidirectional Algorithm basics</a></p><br>
+            <h2>What affects text direction</h2>
             
-            
-            
-            <!-- <h2>How Ar and He different from other languages</h2>
-            
-                <p>The process of recreating LTR graphics, text, content and user interface for RTL or BiDi is tricky and will be discussed separately. The ‘just mirror the whole thing’ approach does not work. </p>
-            -->
-            <details>
-		  <summary><h3>Punctuation Symbols - they appear at the left side and sometimes are mirrored</h3></summary>
-          <p>“?” should be flipped in AR-only.</p>
-          <p>“%” goes left side from the number in Arabic and Turkish (%100), not in Hebrew (100%)</p>
-		  <table style="width:30%">
-		      <tr>
-			      <th></th>
-				  <th>LTR</th>
-				  <th>RTL</th>
-			    </tr>
-				<tr>
-				    <td>greater than 1
-					</td>
-					<td>&gt;1
-					</td>
-					<td>1&lt;
-					</td>
-				</tr>
-				<tr>
-				    <td>less than 1
-					</td>
-					<td>&lt;1
-					</td>
-					<td>1&gt;
-					</td>
-				</tr>
-				<tr>
-				    <td>minus 1
-					</td>
-					<td>-1
-					</td>
-					<td>1-
-					</td>
-				</tr>
-		  </table>
-          
-		  
-
-		</details><br><br>
-            
-            <h2>Letter Forms and Ligatures </h2>
             <p>
-                BiDi scripts are inherently cursive, which means that each BiDi script has multiple letter forms, depending whether it’s used at the start, middle, or end of the word — and there’s a standalone (detached) form. Hebrew has only five letters with both a normal form and a final form. In Arabic script, certain letters can only connect with other letters on the right side, but not the left. This creates slight breaks in the script flow that are subtly smaller than breaks between words. 
+                The order of characters in memory (logical) is not the same as the order in which they are displayed (visual). The set of rules applied by the software to produce the correct order at the time of display are described by the Unicode Bidirectional Algorithm, or 'bidi algorithm' for short.
             </p>
-            <p><img src="img/LettersExamples1.gif"  alt="Arabic letters - example of character shapes depending upon the position"><br>Arabic letters - example of character shapes depending upon the position</p><br>
-            <p><img src="img/LettersExamplesHe.gif"  alt="Hebrew letters - example of character shapes depending upon the position" width="400px"><br>Hebrew letters - example of character shapes depending upon the position</p><br>
-            <p>Arabic letters can also take different shapes, or ligatures, depending on the other letters around them. The letters are combined, or “stacked” in different ways, based on which letters are being written.  </p>
-            <p><img src="img/Muhammad.png" width="25%" alt="Here’s an example of the name “Muhammad” written out fully, followed by the preferred ligature form"><br>Here’s an example of the name “Muhammad” written out fully, followed by the preferred ligature form</p>
-            <p>Both Hebrew and Arabic alphabets have 24 characters. Please note that some characters should be written differently depending on their position in the word (beginning, middle, end and stand-alone). Sometimes browsers like IE11 and Edge display Arabic text as disjoined characters, it is a bug. </p>
-            <p><img src="img/Disjoined.jpg" width="75%" alt="Arabic (and Hebrew) characters within a word should not look as if they are stand-alone"></p>
-		    
-		    <p><a href="https://www.omniglot.com/writing/hebrew.htm" target="_blank">Learn more about Hebrew alphabet</a></p>
+            <p>
+                How does the software know whether this is a sequence of left-to-right or right-to-left characters? Because each character in Unicode has an associated directional property. Most letters are <strong>strongly typed</strong> as LTR (left-to-right). Letters from right-to-left scripts are strongly typed as RTL (right-to-left).
+            </p>
+            <p>
+                The order in which text is displayed depends on the base direction assigned to the phrase, paragraph or block that contains it.
+            </p>
+            <p>
+                Spaces and punctuation are not strongly typed as either LTR or RTL, because they may be used in either type of script. They are therefore classed as <strong>neutral</strong> or <strong>weak</strong> characters. A neutral character between two strongly typed characters that have the same directional type will also assume that directionality.
+            </p>
+            <p>
+                More information about Strong & Weak characters can be found in <a href='https://www.w3.org/International/articles/inline-bidi-markup/uba-basics' target="_blank">Unicode Bidirectional Algorithm basics</a>
+            </p><br>
+            
+            <h2>Letter Forms and Ligatures</h2>
+            
+            <p>
+                 BiDi scripts are inherently cursive, which means that each BiDi script has multiple letter forms, depending whether it’s used at the start, middle, or end of the word — and there’s a standalone (detached) form. Both Hebrew and Arabic alphabets have 24 characters. Please note that some characters should be written differently depending on their position in the word (beginning, middle, end and stand-alone). Hebrew has only five letters with both a normal form and a final form. In Arabic script, certain letters can only connect with other letters on the right side, but not the left. This creates slight breaks in the script flow that are subtly smaller than breaks between words. Sometimes browsers like IE11 and Edge display Arabic text as disjoined characters, it is a bug.
+            </p>
+            <figure>
+                <img src='img/ArTextDisjoined.png' alt='Arabic Text Disjoined Example' title='Arabic Text Disjoined Example'>
+                <figcaption>Example of disjoined AR characters</figcaption>
+            </figure>
+            <figure>
+                <img src='img/ArTextJoined.png' alt='Arabic Text Correct Example' title='Arabic Text Correct Example'>
+                <figcaption>Correct display of AR characters</figcaption>
+            </figure>
+            
+            <p>
+                Not diving deeply in all Arabic and Hebrew characters, here we provide just a few examples to illustrate how different the same character may be, depending upon its position in a word.
+            </p>
+            <figure>
+                <img src='img/LettersExamples1.gif' alt='Different shapes of Arabic ‘N’ and ‘SH’ characters' title='Different shapes of Arabic ‘N’ and ‘SH’ characters'>
+                <figcaption>Arabic letters - example of ‘N’ and ‘SH’ characters shapes depending upon the position</figcaption>
+            </figure>
+            <figure>
+                <img src='img/LettersExamplesHe.gif' alt='Basic and final forms of Hebrew Kaf, Mem, Nun, Pe and Tsadi characters' title='Basic and final forms of Hebrew Kaf, Mem, Nun, Pe and Tsadi characters' width="50%">
+                <figcaption>Hebrew letters - example of character shapes depending upon the position<br>Source:  © The Open Group
+                </figcaption>
+            </figure>
+            
+            <p>
+                Arabic letters can also take different shapes, or ligatures, depending on the other letters around them. The letters are combined, or “stacked” in different ways, based on which letters are being written.
+            </p>
+            <figure>
+                <img src="img/Muhammad.png" width="25%" alt="Here’s an example of the name “Muhammad” written out fully, followed by the preferred ligature form" title='Here’s an example of the name “Muhammad” written out fully, followed by the preferred ligature form'>
+                <figcaption>Here’s an example of the name “Muhammad” written out fully, followed by the preferred ligature form</figcaption>
+            </figure>
+            
+            <p><a href="https://www.omniglot.com/writing/hebrew.htm" target="_blank">Learn more about Hebrew alphabet</a></p>
 		    <p><a href="https://www.omniglot.com/writing/arabic.htm" target="_blank">Learn more about Arabic alphabet</a></p><br><br>
             
             
-                <h2>Numerals. Wast Arabic (European) vs Arabic-Indic</h2>
+                <h2>Punctuation Symbols</h2>
+            <p>
+                Punctuation Symbols appear at the left side of a text and sometimes are different from English.
+            </p>
             
-            <p>The Arabic-Indic numerals are decimal based numbers used in Arabic and Farsi speaking countries. They are one of the oldest sets of numerals still in use today, though the Western Arabic system used in European languages has become dominant in recent centuries. Although Arabic text is written right-to-left, numbers are written the same way as in left-to-right languages, with the most significant digit on the left. The number 123 (one hundred and twenty three) is written ١٢٣ ("123", not "321").</p>
-            <p><img src='img/Numerals.png' alt="Western and Indic Arabic numerals"><br>Western and Indic Arabic numerals</p>
+            <p>
+                For instance, question mark in Hebrew is looking the same as in English, just goes to the left side: “?שְׁאֵלָה” but in Arabic it goes to the left side and looks turned in opposite direction: “سؤال؟”
+            </p>
+            <p>
+                “%” goes left side from the number in Arabic (%100), but not in Hebrew (100%)
+            </p>
             
-            <details>
-		    <summary>Arabic numerals and numbers support (optional)</summary>
-            <p>“Indic” are used in some, but not all Arabic-speaking countries. ArcGIS Pro supports both 'Western' and 'Indic' numerals. Mobile applications are re-using numerals from the system settings. Currently web applications are supposed to display only Western numerals. Some browsers are displaying a mixture of 'Western' and 'Indic' numbers, it is better to avoid such behavior.</p>
-		    <p><img src="img/indic.jpg" width="30%" alt="Western vs. Indic numbers"></p>
-		    </details><br><br>
+            <h2>Numerals and math</h2>
+            
+            <p>
+                The Arabic-Indic numerals are decimal based numbers used in Arabic and Farsi speaking countries. They are one of the oldest sets of numerals still in use today, though the Western Arabic system used in European languages has become dominant in recent centuries. Although Arabic text is written right-to-left, numbers are written the same way as in left-to-right languages, with the most significant digit on the left. The number 123 (one hundred and twenty three) is written ١٢٣ ("123", not "321").
+            </p>
+            
+            <p>
+                In Hebrew today, the decimal system of Western Arabic numerals (ex. 0, 1, 2, 3, etc.) is used in almost all cases, with an exception of Calendar that will be discussed later in this document.
+            </p>
+            
+            <table>
+                <caption>Western Arabic, Arabic-Indic and Hebrew numerals</caption>
+                <tr>
+                    <th>Type</th>
+                    <th colspan="10">Digits</th>
+                </tr>
+                
+                <tr>
+                    <td>Western Arabic</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                </tr>
+                
+                <tr class="specCharacters">
+                    <td>Arabic-Indic</td>
+                    <td>٠</td>
+                    <td>١</td>
+                    <td>٢</td>
+                    <td>٣</td>
+                    <td>٤</td>
+                    <td>٥</td>
+                    <td>٦</td>
+                    <td>٧</td>
+                    <td>٨</td>
+                    <td>٩</td>
+                </tr>
+                
+                <tr class="specCharacters">
+                    <td>Hebrew</td>
+                    <td>-</td>
+                    <td>א</td>
+                    <td>ב</td>
+                    <td>ג</td>
+                    <td>ד</td>
+                    <td>ה</td>
+                    <td>ו</td>
+                    <td>ז</td>
+                    <td>ח</td>
+                    <td>ט</td>
+                </tr>
+            </table>
+            
+            <p>
+                Display the minus sign, for negative numbers, on the right only for Indic Arabic.
+            </p>
+            
+            <p>
+                Display the percent sign on the left only for AR, for HE percent sign is on the right. In Arabic-Indic the percent sign is “ ٪ ”
+            </p>
+            
+            <p>
+                Flow of equations in Arabic Indic are RTL, in Western Arabic and Hebrew always LTR.
+            </p>
+            
+            <table class="specCharacters">
+                <caption>Examples of numbers and math symbols in different systems</caption>
+                <tr>
+                    <th></th>
+                    <th>LTR</th>
+                    <th>Arabic-Indic only</th>
+                    <th>Western Arabic</th>
+                    <th>Hebrew</th>
+                </tr>
+                
+                <tr>
+                    <td>greater than 2</td>
+                    <td>&gt;2</td>
+                    <td>٢&lt; </td>
+                    <td>&gt;2</td>
+                    <td>&gt;2</td>
+                    
+                </tr>
+                
+                <tr>
+                    <td>less than 2</td>
+                    <td>&lt;2</td>
+                    <td>٢&gt;</td>
+                    <td>&lt;2</td>
+                    <td>&lt;2</td>
+                </tr>
+                
+                <tr>
+                    <td>minus 2</td>
+                    <td>-2</td>
+                    <td>٢ -</td>
+                    <td>-2</td>
+                    <td>-2</td>
+                </tr>
+                
+                <tr>
+                    <td>% sign</td>
+                    <td>100%</td>
+                    <td>٪١٠٠</td>
+                    <td>%100</td>
+                    <td>100%</td>
+                </tr>
+            </table>
+            
+            <p>
+                Arabic-Indic decimal separator “ &#x66B; ”
+            </p>
+            
+            <p>
+                Arabic-Indic thousand separator “ &#x66C; ”
+            </p>
+            
+            <table class="specCharacters">
+                <caption>The same number with separators displayed in Western Arabic vs. Arabic Indic</caption>
+                <tr>
+                    <th>123,456.78</th>
+                    <th>١٢٣،٤٥٦٫٧٨</th>
+                </tr>
+            </table>
+            
+            <p>
+                Arabic-Indic are used in some, but not all Arabic-speaking countries. ArcGIS Pro supports both Western Arabic and Arabic-Indic numerals. Native mobile applications are re-using numerals from the system settings. Currently web applications are supposed to display only Western Arabic numerals. Some browsers are displaying a mixture of Western Arabic and Arabic-Indic numbers, it is better to avoid such behavior. 
+            </p>
+            
+                
+		  
             
             
                 
             
-                <h1>Calendars</h1>
-                <p>Hebrew calendar types:</p>
+                <h2>Date Formats and Calendars</h2>
+            
+            <p>
+                Numbers are written LTR, text flow is RTL. That means that if, for instance, we have date in dd/mm/yyyy format, the result will be 2019/12/31. Please use 3rd party libraries or Intl object which supports CLDR and don’t forget about RTL tags.
+            </p>
+                
+            
+                <h3>Hebrew calendar</h3>
+                        
+            <p>
+                Hebrew calendar also called Jewish calendar, is a lunisolar calendar used today predominantly for Jewish religious observances. It determines the dates for Jewish holidays and the appropriate public reading of Torah portions, and daily Psalm readings, among many ceremonial uses. In Israel, it is used for religious purposes, provides a time frame for agriculture and is an official calendar for civil purposes, although the latter usage has been steadily declining in favor of the Gregorian calendar.
+            </p>
+            
+            <table class="specCharacters">
+                <caption>Examples of Hebrew days of the week notation</caption>
+                <tr>
+                    <th>Day of the week</th>
+                    <th>Short notation</th>
+                    <th>Long notation</th>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>א׳</td>
+                    <td>יום ראשון</td>
+                </tr>
+                <tr>
+                    <td>Monday</td>
+                    <td>ב׳</td>
+                    <td>יום שני</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>ג׳</td>
+                    <td>יום שלישי</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>ד׳</td>
+                    <td>יום רביעי</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>ה׳</td>
+                    <td>יום חמישי</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>ו׳</td>
+                    <td>יום שישי</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>ש׳</td>
+                    <td>יום שבת</td>
+                </tr>
+                
+            </table>
+            
+            <figure>
+                <img src="img/HebrewDateTime.png"  alt="An example of Hebrew Date and Time setting" title='An example of Hebrew Date and Time setting'>
+                <figcaption>An example of Hebrew Date and Time setting</figcaption>
+            </figure>
+            <figure>
+                <img src="img/HebrewDateNotation.png"  alt="An example of Hebrew Short and Long Date notation" title='An example of Hebrew Short and Long Date notation'>
+                <figcaption>An example of Hebrew Short and Long Date notation</figcaption>
+            </figure>
+            <figure>
+                <img src="img/HebrewCalendar.png"  alt="An example of Hebrew Calendar" title='An example of Hebrew Clendar'>
+                <figcaption>An example of Hebrew calendar. Calendar is RTL with the first day of the week on the right and the last day on the left</figcaption>
+            </figure>
+            
+            
+                <h3> Arabic calendar</h3>
+            
+            
+            <p>
+                Hijri (Islamic) calendar is based on the motion of the moon. It started after the Hijrah of the Prophet (PBUH) to Madina. The beginning of each month is contingent on the visibility of the moon at the end of the previous month. Once the moon is sighted, the new month commences. Each month starts with a new lunar cycle. Hence, the Hijri Calendar gives only a tentative overview of the upcoming Islamic dates as the start of each month is subject to the sighting of the moon. The Islamic calendar consists of 12 months similar to the Gregorian calendar. However, it consists of 354-355 days unlike the 365-366 days in the regular calendar.
+            </p>
+            <p>
+                Umm al-Quara calendar is a variation on Hijri. First day of every month based on astronomical computation. Usually same as Hijri but can be one or two days earlier. Used as civil calendar in Saudi Arabia; Windows default.
+            </p>
+            
+            <table class="specCharacters">
+                <caption>Examples of Arabic days of the week notation</caption>
+                <tr>
+                    <th>Day of the week</th>
+                    <th>Short notation</th>
+                    <th>Long notation</th>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>ح</td>
+                    <td>الأحد</td>
+                </tr>
+                <tr>
+                    <td>Monday</td>
+                    <td>ن</td>
+                    <td>الاثنين</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>ث</td>
+                    <td>الثلاثاء</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>ر</td>
+                    <td>الأربعاء</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>خ</td>
+                    <td>الخميس</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>ج</td>
+                    <td>الجمعة</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>س</td>
+                    <td>السبت</td>
+                </tr>
+                
+            </table>
+            
+            <figure>
+                <img src="img/ArabicDateTime.png"  alt="An example of Arabic Date and Time setting" title='An example of Arabic Date and Time setting'>
+                <figcaption>An example of Arabic Date and Time setting</figcaption>
+            </figure>
+            <figure>
+                <img src="img/ArabicDateNotation.png"  alt="An example of Arabic Short and Long Date notation" title='An example of Arabic Short and Long Date notation'>
+                <figcaption>An example of Arabic Short and Long Date notation</figcaption>
+            </figure>
+            <figure>
+                <img src="img/ArabicCalendar.png"  alt="An example of Arabic Calendar" title='An example of Hebrew Clendar'>
+                <figcaption>An example of Arabic calendar. Calendar is RTL with the first day of the week on the right and the last day on the left</figcaption>
+            </figure>
+            
+            <p>
+                While web applications are currently using Gregorian calendar only, mobile applications are relying on system settings, more advanced applications like ArcGIS Pro can work with country-specific calendars.
+            </p>
+            <figure>
+                <img src="img/intlcps.png"  alt="Short cut to bring up your desktop regional setting" title='Short cut to bring up your desktop regional setting'>
+                <figcaption>Short cut to bring up your desktop regional setting: <strong>Run > intl.cpl</strong></figcaption>
+            </figure>
+            
+            <figure>
+                <img src="img/HebrewSetCalendar.png"  alt="Setting Hebrew Calendar" title='Setting Hebrew Calendar'>
+                <figcaption>Setting Hebrew Calendar</figcaption>
+            </figure>
+            <h4>Hebrew calendar types:</h4>
             <ol>
                 <li>Gregorian calendar</li>
                 <li>Hebrew</li>
             </ol>
             
-            <p>Hebrew calendar also called Jewish calendar, is a lunisolar calendar used today predominantly for Jewish religious observances. It determines the dates for Jewish holidays and the appropriate public reading of Torah portions, and daily Psalm readings, among many ceremonial uses. In Israel, it is used for religious purposes, provides a time frame for agriculture and is an official calendar for civil purposes, although the latter usage has been steadily declining in favor of the Gregorian calendar.</p>
-            
-            <p>Examples of short/long days of the week and months <i>- to be added</i> </p>
-            
-            <p>Main Arabic calendar types:</p>
-            <ol>
+                        
+            <figure>
+                <img src="img/ArabicSetCalendar.png"  alt="Setting Arabic calendar (Saudi Arabia)" title='Setting Arabic calendar (Saudi Arabia)'>
+                <figcaption>Setting Arabic calendar (Saudi Arabia)</figcaption>
+            </figure>
+            <h4> Arabic calendar types:</h4>
+            <ol> 
+                <li>Umm- Al-Qura</li>
                 <li>Hijri</li>
-                <li>Gregorian</li>
-                
+                <li>Gregorian (English)</li>
+                <li>Gregorian (French)</li>
+                <li>Gregorian (Arabic)</li>
+                <li>Gregorian (English destination)</li>
+                <li>Gregorian (French destination)</li>
             </ol>
             
-            <p>Hijri (Islamic) calendar is based on the moon. Also known as the Hijri Calendar, it started after the Hijrah of the Prophet (PBUH) to Madina. The beginning of each month is contingent on the visibility of the moon at the end of the previous month. Once the moon is sighted, the new month commences. Each month starts with a new lunar cycle. Hence, the Muslim Calendar gives only a tentative overview of the upcoming Islamic dates as the start of each month is subject to the sighting of the moon. The Islamic calendar consists of 12 months similar to the Gregorian calendar. However, it consists of 354-355 days unlike the 365-366 days in the regular calendar.</p>
-            
-            <p>Examples of Arabic days of the week notation:</p>
-            <ul class='calendar'>
-                <li>ن	Monday</li>
-                <li>
-ث 	Tuesday</li>
-                <li>
-ر	Wednesday </li>
-                <li>
-خ	Thursday </li>
-                <li>
-ج	Friday </li>
-                <li>
-س	Saturday </li>
-                <li>
-ح	Sunday </li>
-</ul>
-            
-                        
-            <p>While web applications are currently using Gregorian calendar only, mobile applications are relying on system settings, more advanced applications like ArcGIS Pro can work with country-specific calendars.</p>
-            <p>Short cut to bring up your desktop regional setting: <strong>Run > intl.cpl</strong></p>
-            
-            <img src="img/intlcps.png" alt="Short cut to bring up your desktop regional setting">
-            <img src="img/HebrewSetCalendar.png" alt="Setting Hebrew Calendar">
-            
-            
-            <p>Setting Arabic (Saudi Arabia):</p>
-            
-            <img src="img/ArabicSetCalendar.png" alt="Setting Arabic Calendar">
             
             
             
-            <p>Below are quick videos explaining how to set your system to the required calendar:</p>
+            <h4>Below are quick videos explaining how to set your system to the required calendar:</h4>
             
-            <video width="640" height="480" controls>
+            <video width=90% muted controls>
             <source src="img/HowTo_changeCalendarType_Arabic_Hirji.mp4" type="video/mp4">
             Your browser does not support the video tag.
             </video>
             <figcaption>How to change the calendar to Arabic Hirji in Windows</figcaption>
             
-            <video width="640" height="480" controls>
+            <video width=90% muted controls>
             <source src="img/HowTo_changeCalendarType_HebrewLunari.mp4" type="video/mp4">
   
             Your browser does not support the video tag.
             </video>
             <figcaption>How to change the calendar to Hebrew Lunari in Windows</figcaption>
 
+            <br><br>
+            <hr align="center" width="80%" size="2" color=gray />
             
             
-            *************************************************
             
             
             
-            
-        <h1>General UI flipping rules</h1>
+        <h2>General UI Mirroring Rules</h2>
             <table>
+                <caption>Examples of what to mirror or not to mirror</caption>
                     <tr>
                         <th>mirror</th>
                         <th>do NOT mirror</th>
@@ -232,40 +514,49 @@
                         <td> </td>
                         <td>time slider</td>
                     </tr>
+                    <tr>
+                        <td> </td>
+                        <td>position of widgets within the map frame</td>
+                    </tr>
                 </table>
             
             
-            <h2>What to flip</h2>
-                <details>
-                    <summary><h3>Directional graphics</h3></summary>
-                <p>Arrows are mirrored for an RTL layout, the meaning will be just the opposite. Therefore, we do not flip arrows but remember the following meaning:</p>
-                <p>An arrow that points to the left (green) represents the concept of going back.</p>
-                <p><img src='img/BackArrow.png' alt='Back arrow shows to the right in Arabic and Hebrew'></p>
-                <p>An arrow that points to the right (gray) represents the concept of going forward to the next page. </p>
-                <p><img src='img/BIDIarrows.png' alt='Arrows that change their meaning'></p>
-                <p>Arrows meaning when Mirroring</p>
+            <h3>What to mirror</h3>
+                <h4>Directional graphics</h4>
+                <p>
+                    Non-directional (Undo/Redo, Next/Previous, etc.) arrows are mirrored for RTL layout, i.e. their meaning becomes the opposite. 
+                </p>
+            <figure>
+                <img src='img/BackArrow.png' alt='Back arrow shows to the right in Arabic and Hebrew' title='Back arrow shows to the right in Arabic and Hebrew'>
+                <figcaption>An arrow that points to the left (green) represents the concept of going back. <br>An arrow that points to the right (gray) represents the concept of going forward to the next page.</figcaption>
+            </figure>
+            
+                
                 <table>
+                    <caption>Arrows meaning when Mirroring</caption>
                     <tr>
                         <th>Left</th>
                         <th>Right</th>
                     </tr>
                     <tr>
                         <td>LTR: Backward, Previous, Undo</td>
-                        <td>LTR: Forward, Next</td>
+                        <td>LTR: Forward, Next, Redo</td>
                     </tr>
                     <tr>
                         <td>RTL: Forward, Next</td>
                         <td>RTL: Backward, Previous</td>
                     </tr>
                 </table>
-                </details><br><br>
             
-            <details>
-            <summary><h3>Coordinates should follow BiDi rules, see examples below</h3>
-            </summary>
-            <p>The XY coordinates are written as in English (X, Y), but from left to right like this (Y ,X)</p>
-            <p>The negative sign follows the settings of the operating system.</p>
-            <p>The Lat Long coordinates are written as Long Lat (opposite to English), but because of the general RTL text direction Long appears at the beginning of the string at the right side and Lat appears at the end of the string at the left side</p>
+            <h4>Coordinates</h4>
+           
+            <p>
+                The XY coordinates are looking like in English (X,Y) in Hebrew, and go RTL in Arabic (Y,X).
+            </p>
+            <p>
+                The negative sign follows the culture settings (user locale/regional format) of the operating system where applicable.
+            </p>
+            <p>The Latitude -Longitude coordinates are written as Longitude-Latitude (opposite to English), but because of the general RTL text direction Longitude appears at the beginning of the string at the right side and Latitude appears at the end of the string at the left side</p>
             <table style="border-spacing: 35px 15px;">
                 <tr>
                     <th>English Direction&#9;</th>
@@ -287,100 +578,399 @@
                 </tr>
             </table>
             <br>
-            <p><i>Note:</i> Not all countries use N/S/E/W notation similar to English. In RU it is с.ш./ю.ш./в.д./з.д. Own abbreviations in native characters are widely used in TH, JA and many other countries with non-Latin alphabet. Countries where Arabic is used refer to the cardinal directions as Ash Shamaliyah (N), Al Gharbiyah (W), Ash Sharqiyah (E) and Al Janobiyah (S). Additionally, Al Wusta is used for the center. For instance, N is written in AR as ثوانی</p>
-        </details><br><br>
+            <p>
+                <i>Note:</i> Not all countries use N/S/E/W notation similar to English. In RU it is с.ш./ю.ш./в.д./з.д. Own abbreviations in native characters are widely used in TH, JA and many other countries with non-Latin alphabet. Countries where Arabic is used refer to the cardinal directions as Ash Shamaliyah (N), Al Gharbiyah (W), Ash Sharqiyah (E) and Al Janobiyah (S). Additionally, Al Wusta is used for the center. For instance, N is written in AR as  ثوانی
+            </p>
+            <p>
+                Do not hardcode N/S/E/W.
+            </p>
+            <br><br>
             
-            <details>
-		  <summary><h3>Lists and Legends are right-aligned and have bullets or numbers at the right side from text</h3></summary>
-          <p>Legends, ordered lists and unordered lists should be right-aligned, with bullets or patches at the right side. The same is true for icons. For a Numbered list icon, don't flip it, a special icon exists in Caltcite-components <img src="img/ListButtonRTL.JPG" width=55px></p>
-          <p><img src="img/ListsAndLegends.JPG" width=1400px alt="Part of WAB UI with a list and legend"></p>
-                
-                <p><img src="img/Legend.JPG" width="100%" alt="Here is an example of a legend"></p>
+            
+                <h4>Lists and Legends </h4>
+            <p>
+                Legends, ordered lists and unordered lists should be right-aligned, with bullets or patches at the right side. The same is true for icons. For a Numbered list icon, don't mirror it, a special icon exists in Calcite-components. 
+            </p>
+            <figure>
+                <img src="img/ListButtonRTL.JPG" width=55px alt="Mirrored List Icon" title="Mirrored List Icon">
+                <figcaption>Mirrored List Icon</figcaption>
+            </figure>
+            
+            <p>
+                Whenever possible, please provide an option for user to change the legend RTL/LTR flow manually if needed.
+            </p>
+            <figure>
+                <img src="img/ListsAndLegendsLTR.JPG" width=1400px alt="Part of WAB UI with a list and legend">
+                <img src="img/ListsAndLegendsRTL.JPG" width=1400px alt="Part of WAB UI with a list and legend in rigt-to-left user interface">
+                <figcaption>An example of a Legend Icon and a Legend displayed in an application</figcaption>
+            </figure>
+            <figure>
+                <img src="img/LegendEN.jpg"  alt="An example of a legend left-aligned in English">
+                <img src="img/LegendHE.jpg"  alt="An example of a legend right-aligned in Hebrew">
+                <figcaption>An example of a legend left-aligned in English and right-aligned in Hebrew layout</figcaption>
+            </figure>
+            <figure>
+                <img src="img/Rombiki.JPG" width="100%" alt="Tricky symbology is displayed correctly in RTL the same as in English">
+                <figcaption>An example of probably the most tricky symbology is displayed correctly in RTL the same as in English</figcaption>
+            </figure>
+            
+          
+            
+                <h4>Menus, popups and drop-downs</h4>
+            <figure>
+                <img src="img/HomeDropdownLTR.jpg" alt="Here is an example of an English  menu with a dropdown">
+                <img src="img/HomeDropdownRTL.jpg" alt="Here is an example of an Arabic  menu with a dropdown">
+                <figcaption>Menus, popups and drop-downs should respect RTL direction</figcaption>
+            </figure>
+            
+                <h4>Dialog layouts </h4>
+            
+            <p>
+            The order of most UI elements should go in RTL direction in AR and HE UI. Dialog boxes should be mirrored
+            </p>
+            
+            <figure>
+                <img src="img/Simple_dialog.JPG" width="100%" alt="Here is an example of a very simple dialog with X, OK and Cancel buttons">
+                <figcaption>An example of a very simple dialog with English and Arabic UI</figcaption>
+            </figure>
+            
+            <p>
+                While tools within their panels are following their LTR or RTL order, there is an exclusion. Widgets within the Map Frame are always positioned the same, no matter RTL or LTR.
+            </p>
+            <figure>
+                <img src="img/MapViewerLTR.png" alt="A map with English layout has all tools arranged in left to right order" title="A map with English layout has all tools arranged in left to right order"><br><br>
+                <img src="img/MapViewerRTL.png" alt="A map with Arabic layout has all tools arranged in right to to left order" title="A map with Arabic layout has all tools arranged in right to to left order">
+                <figcaption>In the Map Viewer, you can see that the order or all tools is mirrored. The only exclusion is widgets that are in the upper left corner of the map both in English and Arabic UI</figcaption>
+            </figure>
+            
 		
-                
-          <p>An example of probably the most tricky symbology is displayed correctly in RTL:</p>
-          <p><img src="img/Rombiki.JPG" width="100%" alt="Tricky symbology"></p>
-		</details><br><br>
-            
-            <details>
-		  <summary><h3>Menus, popups and drop-downs should respect RTL direction</h3></summary>
-          <p><img src="img/HomeDropdown.JPG" width=1400px alt="Here is an example of a menu with a dropdown"></p>
-		</details><br><br>
-		<details>
-		  <summary><h3>Dialog layouts should be flipped, but there are some exclusions</h3></summary>
-          <p>The order of most UI elements should go in RTL direction in AR and HE UI. Dialog boxes should be flipped</p>
-		  <p><img src="img/Simple_dialog.JPG" width="100%" alt="Here is an example of a very simple dialog with X, OK and Cancel buttons"></p>
-          <p>While tools within their panels are following their LTR or RTL order, there is an exclusion. Widgets within the Map Frame are always positioned the same, no matter RTL or LTR.</p>
-		  <p><img src="img/Map_example.JPG" width="100%" alt="Here is an example of a toolbar with few tools going in certain order for RTL and LTR"></p>
-		</details><br><br>
+		  
             
            
                 
-            <p>*******************************************************</p>
-            <h2>What not to flip</h2>
-                <h3>Share, Import, Export, Download just like LTR, they do not have directional meaning.</h3>
-                <p>If you are not sure whether the arrow or any icons that should be mirror, check with other applications such as MS outlook, words, AutoCAD and Adobe to find out how others are doing in RTL.
-                </p>
-                <p><img src='img/OutlookEnArrowsNoFlip.png'></p>
-                <p><img src='img/OutlookArArrowsNoFlip.png'></p>
-                <p><img src='img/OutlookEnArrowsNoFlip1.png'></p>
-                <p><img src='img/OutlookArArrowsNoFlip1.png'></p>
-                <p><img src='img/OutlookEnArrowsNoFlip2.png'></p>
-                <p><img src='img/OutlookArArrowsNoFlip2.png'></p>
-                
-                <h3>Non-Directional Graphics and images</h3>
-                <p>Graphics should not be mirrored at all, such as legal trademarks or logos because they will make no sense when laid out from right to left.<br>
-                Images element especially all raster imageries should not be mirrored, otherwise, it will become useless and distorted.<br>
-                Text reading order in the graphics should honor LTR or RTL, it should not blindly mirror everything.</p>
-            <p>ESRI Style Scale bar with English Text</p>
-            <p><img src='img/RTL_scalebars_noFlip.png'></p>
             
-            <p>Incorrect and useless ESRI Style Grid reference system after mirroring.</p>
-            <p><img src='img/RTLstylesIncorrect.png'</p>
-                
-                <h3>Charts, graphs & Histograms</h3>
-            <p>Charts/Histograms should be like in English, except Hebrew/Arabic text reading order should be RTL and alignment should be to the right. Legend is neutral on the graph/chart, it does not has directional meaning, so the symbol can be on either size but the numeric value that contain greater than &gt; or smaller than  &lt; (e.g. &gt;1000, &lt; 999) should honor LTR reading order</p>
-            <p><img src='img/histogramRTLnoFlip.png'</p>
-            
-            <details>
-		  <summary><h3>URLs, File paths and English text</h3></summary>
-          <p>Keep them LTR. NP if they will be right-aligned. </p>
-          <img src="img/RTL_URL.JPG" alt="URL goes in Left-to-right direction and is right-aligned within its box" width=1400px>
-                <p>Sometimes English text with punctuation may look not very good in RTL layouts. While there is no way to control user-defined text (which may be typed in any language), it is better to control the punctuation in "Always English" text like product names. You can use LTR tags to prevent browsers will force them to follow the LTR standard. For example:</p>
-		  <p><img src="img/notebook_parenthesis.png" width=100% alt="ArcGIS Notebook Python 3 product name parenthesis display incorrectley"></p>
-		  <p>Solutions: </p>
-		  <p><xmp><option>ArcGIS Notebook Python 3 Standard (3.0)&lrm;</option>
-
-<option dir="ltr">ArcGIS Notebook Python 3 Standard (3.0)</option>
-
-<option style="direction:ltr;">ArcGIS Notebook Python 3 Standard (3.0)</option></xmp></p>
-		</details><br><br>
-		<details>
-		  <summary><h3>Date formats - Numbers are written LTR, text flow is RTL</h3></summary>
-          <p>That means that if, for instance, we have date in dd/mm/yyyy format, the result will be 2019/12/31. Please use DOJO library and don’t forget about RTL tags. </p>
-		</details><br><br>
-                
-                <h3>Formulas, Equations and measurement</h3>
-<p>HTML, Python scripts, Dynamic text (e.g. XML) SQL statement and label expressions are standardize and they all remain LTR<br>
-e.g. Dynamic text remain LTR</p>
-            <p><img src='img/DynamicTextNoFlip.png'></p>
-            <P>Select by Attribute – even though UI is RTL but the select statement should remain LTR.</P>
-            <p><img src='img/SelectByaTTRIBUTES.png'></p>
-
-            
-            <h3>Model builder is right to left oriented in Hebrew but the flow direction should be remain LTR</h3>
-            <p><img src='img/ModelBuilder.png'></p>
-            <p>Model builder flow direction should remain LTR</p>
-            
-            <h3>Altitude and Azimuth point should remain unchanged</h3>
-            <p>The azimuth point is the same in both dialogs, but the degrees number under the picture is different.
-            The Altitude point, which "walks" on the curve, does not follow the curve in the Hebrew dialog.
+                        <h3>What not to mirror</h3>
+                    <h4>Share, Import, Export, Download icons</h4>
+            <p>
+                    Share, Import, Export, Download icons should look just like LTR, they do not have directional meaning. If you are not sure whether the arrow or any icons that should be mirrored, check with other applications such as MS Outlook, Word, AutoCAD and Adobe Illustrator to find out how to render graphics/icons in RTL.
             </p>
-            <p><img src='img/Azimuth.png'></p>
+            <p>
+                The following screenshots are good examples from Outlook:
+            </p>
+            <figure>
+                <img src='img/OutlookEnArrowsNoFlip.png' height=100px>
+                
+                <img src='img/OutlookArArrowsNoFlip.png' height=100px>
+                <figcaption>Reply, Reply All and Forward icons in Arabic are the same as in English</figcaption>
+            </figure>
+            <figure>
+                <img src='img/OutlookEnArrowsNoFlip1.png'>
+                <img src='img/OutlookArArrowsNoFlip1.png'>
+                <figcaption>Import/Export arrows in Arabic are the same as in English</figcaption>
+            </figure>
+            <figure>
+                <img src='img/OutlookEnArrowsNoFlip2.png'><br><br>
+                <img src='img/OutlookArArrowsNoFlip2.png'>
+                <figcaption>Icons at the Send/Receive ribbon in Arabic are the same as in English</figcaption>
+            </figure>
+             
+                
+                
+                
+                    <h4>Non-Directional Graphics, images, trademarks and logos</h4>
+            <p>
+                Graphics should not be mirrored at all, such as legal trademarks or logos because they will make no sense when laid out from right to left.
+            </p>
+            <figure>
+                <img src='img/Logo.png' alt="Correct Esri Logo">
+                <img src='img/LogoIncorrect.png' alt="Esri logo wrapped incorrectly">
+                <figcaption>Don't mirror logos and trademarks</figcaption>
+            </figure>
+            <p>
+                Images element especially all raster imageries should not be mirrored, otherwise, it will become unusable and distorted.
+            </p>
+            <p>
+                Text reading order in the graphics should honor LTR or RTL, it should not blindly mirror everything.
+            </p>
             
-                <h3>Time slider and media control should remain unchanged just like LTR <i>(Olga will replace with better picture later)</i> </h3>
-            <p><img src='img/TimesLIDER.png'></p>
-            <p><img src='img/TimeScale.JPG'</p>
+            <figure>
+                <img src='img/StyleManager1En.png'>
+                <figcaption>ESRI Style Scale bar with English Text</figcaption>
+            </figure>
+            <figure>
+                <img src='img/IncorrectMirroring.png'>
+                <figcaption>Incorrect and unusable  ESRI Style Scalebar after mirroring</figcaption>
+            </figure>
+            <figure>
+                <img src='img/RTL_scalebars_noFlip.png'>
+                <figcaption>ESRI Style Scale bar displays in RTL correctly</figcaption>
+            </figure>
+            
+            <figure>
+                <img src='img/StyleManagerEn.png'>
+                
+                <img src='img/RTLstylesIncorrect.png'>
+                <figcaption>Incorrect and useless ESRI Style Grid reference system after mirroring</figcaption>
+            </figure>
+            
+            
+                
+                <h4>Charts, graphs & Histograms</h4>
+            
+            <p>
+                Charts/Histograms should be like in English, except Hebrew/Arabic text reading order should be RTL and alignment should be to the right. Legend is neutral on the graph/chart, it does not have directional meaning, so the symbol can be on either side but the numeric value that contain greater than &gt; or smaller than &lt; (e.g. &gt;1000, &lt; 999) should honor LTR reading order.
+            </p>
+            
+            <figure>
+                <img src='img/PieChartEN.png' alt='Pie chart and legend displayed in English'><br><br>
+                <img src='img/PieChartAR.png' alt='Pie chart and legend displayed in Arabic'>
+                <figcaption>An example of Pie Chart with legend in English and Arabic UI</figcaption>
+            </figure>
+            
+            <figure>
+                <img src='img/LineGraphRTL.png'>
+                <img src='img/LineGraph.png'>
+                <figcaption>An example of Line Graphs with legends in Arabic UI mirrored incorrectly (red) and correctly (green)</figcaption>
+            </figure>
+            
+            
+                <h4>URLs, File paths and English text</h4>
+            <p>
+              Keep them LTR. In some cases they can be right-aligned, but it is not required. 
+            </p>
+            <figure>
+                <img src='img/LogoLinkEN.png'>
+                <img src='img/LogoLinkAR.png'>
+                <figcaption>An example of an URL in English and Arabic UI</figcaption>
+            </figure>
+            
+            <p>
+                Sometimes English text with punctuation may look confusing in RTL layouts. While there is no way to control user-defined text (which may be typed in any language), it is better to control the punctuation in text which is always in English by using LTR tags. For example: 
+            </p>
+            <figure>
+                <img src="img/NotepadIncorrect.png" width=48% alt="ArcGIS Notebook Python 3 product name parenthesis display incorrectley">
+                <img src="img/NotepadCorrect.png" width=48% alt="ArcGIS Notebook Python 3 product name parenthesis display correctley">
+                <figcaption>Punctuation is fixed by applying LTR tag to a portion of an English text inside a RTL web page</figcaption>
+            </figure>
+            <p>Solutions: </p>
+		    <p><xmp><option>ArcGIS Notebook Python 3 Standard (3.0)&lrm;</option>
+
+                <option dir="ltr">ArcGIS Notebook Python 3 Standard (3.0)</option>
+
+                <option style="direction:ltr;">ArcGIS Notebook Python 3 Standard (3.0)</option></xmp></p>
+		
+            
+                <h4>Formulas, Equations, Scripts and Measurement</h4>
+            
+		    <p>
+                HTML, Python scripts, Arcade expression, Programming languages, Dynamic text (e.g. XML) SQL statement and label expressions are standardized and they all remain LTR e.g. Dynamic text remain LTR
+            </p>
+            <figure>
+                <img src='img/DynamicTextNoFlip.png'>
+                <figcaption>An example of Dynamix Text that should always be LTR</figcaption>
+            </figure>
+            
+            
+            
+            <figure>
+                <img src='img/SelectByaTTRIBUTESincorrect.png'>
+                <img src='img/SelectByaTTRIBUTEScorrect.png'>
+                <figcaption>Select by Attribute – even though UI is RTL but the select statement should remain LTR</figcaption>
+            </figure>
+            
+                <h4>Model builder</h4>
+            <p>
+                Model builder UI is right to left oriented in Hebrew and Arabic but the flow direction should remain LTR
+            </p>
+            <figure>
+                <img src='img/ModelBuilder.png'>
+                <figcaption>Model builder flow direction should remain LTR</figcaption>
+            </figure>
+
+                <h4>Altitude and Azimuth point</h4>
+            <p>
+                
+            </p>
+            <figure>
+                <img src='img/AltitudeENU.png' width=48%>
+                <img src='img/AltitudeRTLincorrect.png' width=48%>
+                
+                <figcaption>The azimuth point is the same in both dialogs, but the degrees number under the picture is different. The Altitude point, which "walks" on the curve, does not follow the curve in the Hebrew dialog</figcaption>
+            </figure>
+            <figure>
+                
+                <img src='img/AltitudeRTLcorrect.png' width=48%>
+                <figcaption>The azimuth point and degrees number display correctly in Hebrew dialog</figcaption>
+            </figure>
+            
+            
+                <h4>Time slider and media control</h4>
+            <figure>
+                English:<img src='img/TimeScaleEn.JPG'><br>
+                Arabic:<img src='img/TimeScaleAr.JPG'>
+                <figcaption>Time slider and media control should remain unchanged just like LTR</figcaption>
+            </figure>
+            
+                
+                    <h2>MAIN CHALLENGES (MOST COMMON BUGS) DEV TEAM MAY HAVE</h2>
+                <h3>Garbled or Artifact Arabic Text </h3>
+            <figure>
+                English:<img src='img/GarbledArabic.png'><br>
+                <figcaption>Arabic text looks broken due to encoding</figcaption>
+            </figure>
+            
+                <h3>Interactive elements work in opposition direction</h3>
+            <p>
+              Examples are vertial separators between windows, right-align and left-align buttons.
+            </p>
+            <figure>
+                <img src="img/RTLmoving_opposite.gif" width="50%" alt="Vertical window separator is moving opposite side from cursor moving">
+                <figcaption>Here is a "bad example" when cursor is moving one side and vertical separator is moving opposite side. Avoid such behavior!</figcaption>
+            </figure>
+          
+            <p>
+                Please ensure and test manually that if a tool has an arrow showing left side, it should move the element the same side as shown at the icon.
+            </p>
+            <figure>
+                <img src="img/RTL_directions_arrows.JPG" width="50%" alt="Right-align and left-align buttons shold be tested manually to make sure that they point proper direction">
+                <figcaption>If an arrow button is pointing to the left, clicking this button should move the element on focus to the left, and vice versa</figcaption>
+            </figure>
+            
+                <h3>False alarm to report incorrect parentheses</h3>
+            <figure>
+                <img src="img/IvoOpenBracket.png" width=48% alt="English text in Arabic UI looks as if it has two opening brackets instead of a set of opening and closing brackets">
+                <img src='img/GoodRTLbrackets.png' width=48% alt="Arabic UI displays brackets with Arabic text correctly">
+                <figcaption>When parentheses exist in a GUI and it contains a mixture of English and Arabic/Hebrew text, parentheses may display some weird behavior.  This behavior is not a bug, the software is unable to detect the language when there is a mixture of LTR/RTL text but as soon as the strings written in Arabic/Hebrew, parenthesis will display correctly in the UI.</figcaption>
+            </figure>
+            
+                <h3>Contextual Digits </h3>
+		    <p>
+                Contextual Digits – ٠١٢٣٤ABCDE67890
+            </p>
+            
+            <p>
+                If you have a string like 12345ABCDE67890, and you render it on an Arabic system, you might get ٠١٢٣٤ABCDE67890. The leading digits are rendered as Arabic-Indic digits, but the trailing digits are rendered as European digits. 
+            </p>
+            <figure>
+                <img src="img/HEX_incorrect.png" width=48% alt="Western Arabic and Arabic Indic digits mixed up incorrectly in HEX">
+                <img src='img/HEX_correct.png' width=48% alt="HEX code should use Western Arabic digits">
+                <figcaption>HEX code should use Western Arabic digits.</figcaption>
+            </figure>
+            
+            <p>
+                This is a feature known as <i>contextual digit substitution</i>. You can specify whether European digits are replaced with native equivalents by going to the Region control panel (formerly known as <i>Regional and Language Options</i>), clicking on the <i>Formats</i> tab, going to <i>Additional settings</i> (formerly known as <i>Customize this format</i>), and looking at the options under <i>Use native digits</i>. The three options there correspond to the <a href='http://web.archive.org/web/20120119031036/http:/blogs.msdn.com/b/michkap/archive/2005/09/09/462920.aspx' target="_blank">three values for LOCAL_IDIGITSUBSTITUTION</a>. Programmatically, you can override the user preference (if you know that you are in a special case, like an IP address) by following the <a href='https://docs.microsoft.com/ru-ru/windows/win32/intl/digit-shapes?redirectedfrom=MSDN' target="_blank">instructions in MSDN</a>.
+            </p>
+            
+            <ul>
+                <li>Uniscribe: Script­Apply­Digit­Substitution</li>
+                <li>DWrite: IDWrite­Text­Analysis­Sink::Set­Number­Substitution</li>
+                <li>GDI: ETO_NUMERICS­LATIN or ETO_NUMERICS­LOCAL</li>
+            </ul>
+            
+            <p>
+                As a last resort, you can stick a Unicode NODS (U+206F) at the beginning of the string to force European digits, or a Unicode NADS (U+206E) to force national digits. Bonus chatter: What’s the point of contextual digit substitution anyway? Suppose you have the string “there are 3 items remaining.” (Let’s say that all text in lowercase is in Arabic.) You want this 3 to be rendered in Arabic-Indic digits because it is part of an Arabic sentence. On the other hand, if you have the string “that’s a really nice BMW 350.” you want the 350 to be in European digits since it is part of the brand name “BMW 350”.
+            </p>
+            
+            <p>
+                Contextual digit substitution chooses whether to use Arabic-Indic digits or European digits by matching them to the characters that immediately precede them. (And if no character precedes them, then it uses the ambient language.)
+            </p>
+            
+            <p>
+                <a href='https://devblogs.microsoft.com/oldnewthing/?p=1653'>https://devblogs.microsoft.com/oldnewthing/?p=1653</a>
+            </p>
+            
+            <p>
+                The differences between the three options available under Use Native Digits are:
+            </p>
+            
+            <ul>
+                <li><strong>Context</strong>: The shape depends on the previous text in the same output</li>
+                <li><strong>Never</strong>: Gives full Unicode compatibility</li>
+                <li><strong>National</strong>: Native shapes determined by LOCALE_SNATIVEDIGITS</li>
+            </ul>
+            
+            <figure>
+                <img src='img/ContextDigitShape.png' alt='Setting Context digits'>
+                <figcaption>Setting Context digits</figcaption>
+            </figure>
+            
+            <p>
+                Even Though Contextual Digits substitution is commonly used for rendering in RTL environment, not all situations apply correctly when running into standardized terminology.
+            </p>
+            
+            <p>
+                For example, HEX value should behave like other applications such as Adobe Illustrator or Paint 3D. Rendering should remain LTR- European Digits.
+            </p>
+            
+            <figure>
+                <img src='img/AdobeIllustrator.png' alt='Digits in Paint 3D'>
+                <img src='img/AdobeIllustrator1.png' alt='Digits in Adobe Illustrator'>
+                <figcaption>Digits in Paint 3D and in Adobe Illustrator</figcaption>
+            </figure>
+            
+                <h4>Broken text order</h4>
+            <p>
+                When injecting LTR into RTL string, it should not break the text order. In this example “0 of 5” looks broken because “GPS” inserted in the middle between incorrectly.  
+            </p>
+            
+            <figure>
+                <img src='img/AveragingENU.png' alt='English string with text saying 0 of 5'>
+                <img src='img/AveragingRTLincorrect.png' alt='Hebrew string with broken word order'>
+                <img src='img/AveragingRTLcorrect.png' alt='Hebrew string with correct word order'>
+                <figcaption>At the incorrect (middle) screenshot "0 of 5" is broken by the word "GPS" because the mixture of Hebrew and English characters may mess up the word order</figcaption>
+            </figure>
+            
+                <h4>Days of the week go to the wrong direction</h4>
+                       
+            <figure>
+                <img src='img/CalendarRTLincorrect.png' alt='Incorrect Hebrew Claendar'>
+                <img src='img/CalendarRTLcorrect.png' alt='Correct Hebrew Calendar'>
+                <figcaption>This is an example of August 2020  calendar and the Aug. 1 <br>
+                But the issue shows Aug is on Saturday ש׳. 1 is on Sunday א׳  which is incorrect.</figcaption>
+            </figure>
+            
+                <h4>Mixture of Western Arabic and Arabic-Indic numerals</h4>
+            <figure>
+                <img src='img/MixOfNumbersIncorrect.png' alt='Western and Indic Arabic within the same dialog'>
+                <img src='img/MixOfNumbersCorrect.png' alt='Indic Arabic consistently used within a dialog'>
+                <figcaption>Mixture of Western Arabic and Arabic-Indic numerals. For consistency, everything should use the same system: only Western Arabic or only Arabic-Indic</figcaption>
+            </figure>
+            
+                <h4>Positioning UI elements</h4>
+            
+            <figure>
+                <img src='img/CheckmarkENU.png' alt='English dialog with a checkmark' width=48%>
+                <img src='img/CheckmarkIncorrect.png' alt='Arabic dialog with a checkmark positioned incorrectly'  width=48%>
+                <img src='img/CheckmarkCorrect.png' alt='Arabic dialog with a checkmark positioned correctly'  width=48%>
+                <figcaption> Check mark position in Arabic UI should be RTL mirrored</figcaption>
+            </figure>
+            
+            <figure>
+                <img src='img/RibbonENU.png' alt='English ribbon with tools' title='English ribbon with tools' width=48%>
+                <img src='img/RibbonIncorrect.png' alt='Hebrew ribbon with incorrect tools order' title='Hebrew ribbon with incorrect tools order' width=48%>
+                <img src='img/RibbonCorrect.png' alt='Hebrew ribbon with correct tools order' title='Hebrew ribbon with correct tools order' width=48%>
+                <figcaption> Buttons in BiDi UI should follow RTL order </figcaption>
+            </figure>
+            
+            <figure>
+                <img src='img/UndoENU.png' alt='English Undo button shows to the left' title='English Undo button shows to the left' width=48%>
+                <img src='img/UndoIncorrect.png' alt='Hebrew Undo button shows to the left incorrectly' title='Hebrew Undo button shows to the left incorrectly'  width=48%>
+                <img src='img/UndoCorrect.png' alt='Hebrew Undo button shows to the right correctly' title='Hebrew Undo button shows to the right correctly' width=48%>
+                <figcaption> Buttons in BiDi UI should follow RTL order </figcaption>
+            </figure>
+            
+            <p>
+                ‘Magnifier glass’ and ‘Pen’ icons should not be mirrored in RTL<br>
+                There are no general rules how to display icons like ‘Magnifier glass’ even in English UI, please just be consistent throughout the application.
+            </p>
+            
+            <figure>
+                <img src='img/RibbonButtonsENU.png' alt='English Buttons' title='English Buttons' width=30%>
+                <img src='img/RibbonButtonsIncorrect.png' alt='Hebrew buttons mirrored relatively to English' title='Hebrew buttons mirrored relatively to English'  width=30%>
+                <img src='img/RibbonButtonsCorrect.png' alt='Hebrew buttons the same as English correctly' title='Hebrew buttons the same as English correctly' width=30%>
+                <figcaption> ‘Magnifier glass’ and ‘Pen’ icons are neutral and have no directional meaning </figcaption>
+            </figure>
+            
             
 
                 
@@ -433,18 +1023,18 @@ e.g. Dynamic text remain LTR</p>
                    
             <h2>Days of a week and their order</h2>
             
-        
+        ***************************************
             
-        <h1>How to set up Ar/He the environment</h1>
+        <h2>How to set up Ar/He the environment</h2>
             
-            <h2>Hebrew - ArcGIS Desktop</h2> 
+            <h3>Hebrew - ArcGIS Desktop</h3> 
                 <ul>
                     <li>95% of GIS users use English Operating System, Hebrew OS is not required. </li>
                     <li>Set user and system locales to Hebrew (Israel) from Regional format. </li>
                     <li>Hebrew LP is not available for Desktop.</li>
                 </ul>
             
-            <h2>Hebrew - ArcGIS Pro</h2>
+            <h3>Hebrew - ArcGIS Pro</h3>
                 <ul>
                     <li>English OS </li>
                     <li>Set user and system locale to Hebrew (Israel)</li>
@@ -454,7 +1044,7 @@ e.g. Dynamic text remain LTR</p>
                     <li>Start ArcGIS Pro, go to the back stage select ‘options’, change ArcGIS Pro display language from English to Hebrew, restart the application will launch Hebrew ArcGIS Pro </li>
                 </ul>
             
-            <h2>Arabic - ArcGIS Desktop</h2>
+            <h3>Arabic - ArcGIS Desktop</h3>
                 <ul>
                     <li>You need an Arabic OS to prevent running any false alarm. You can either deploy a VM from <a href="https://ecsprd.esri.com/vcac/#csp.cs.ui.catalog.list" target="_blank"> https://ecsprd.esri.com/vcac/#csp.cs.ui.catalog.list  </a><br>
                     or install MS MUI from
@@ -466,9 +1056,11 @@ e.g. Dynamic text remain LTR</p>
                     </li>
                     
                 </ul>
-                <p>After installing the MUI, restart the desktop, if you have LP installed, ArcGIS Desktop would be able to detect the registry and launch an Arabic Desktop. If you have set the editor permission, you can toggle the language in ArcGIS Administrator, select Arabic from the drop down and re-launch Desktop. </p>
+                <p>
+                    After installing the MUI, restart the desktop, if you have LP installed, ArcGIS Desktop would be able to detect the registry and launch an Arabic Desktop. If you have set the editor permission, you can toggle the language in ArcGIS Administrator, select Arabic from the drop down and re-launch Desktop
+            </p>
             
-            <h2>Arabic - ArcGIS Pro</h2>
+            <h3>Arabic - ArcGIS Pro</h3>
                 <ul>
                     <li>Deploy an Arabic VM or Apply Arabic MUI </li>
                     <li>Install LP from  <a href="\\metro\ArcGISPro2.7_OnlyLanguagePacks\Arabic " target="_blank">\\metro\ArcGISPro2.7_OnlyLanguagePacks\Arabic </a></li>
@@ -476,11 +1068,11 @@ e.g. Dynamic text remain LTR</p>
                     <li>Verify the user and system locale set to Arabic (SA) </li>
                     <li>The application will launch Arabic ArcGIS Pro once it detect LP exists. If not, go to the backend and change the display language to Arabic. </li>
                 </ul>
-                <p>Detail workflow for set up can be found at VM and i18n machine set up. </p>
+                <h3>Detail workflow for set up can be found at VM and i18n machine set up. </h3>
             
                
-            <h2>How to change Display language in Outlook to find out how other applications handle RTL ? </h2>
-                <p>File > Options > Language > Choose Display Language </p>
+            <h4>How to change Display language in Outlook to find out how other applications handle RTL ? </h4>
+                <p>File &gt; Options &gt; Language &gt; Choose Display Language </p>
                 <p><img src="img/OutlookFileOptions.png"  alt="Outlook File Options"></p>
                 <p>Install Arabic/Hebrew Display language from Microsoft </p>
                 <p>Promote Arabic as default language and restart outlook </p>
@@ -489,8 +1081,8 @@ e.g. Dynamic text remain LTR</p>
  
 
  
-        <h2>How to set up mobile device to test in Hebrew and Arabic </h2>
-            <h3>Setting iOS device language </h3>
+        <h3>How to set up mobile device to test in Hebrew and Arabic </h3>
+            <h4>Setting iOS device language </h4>
                 <ol>
                     <li>Open Settings</li>
                     <li>Tap General </li>
@@ -498,21 +1090,27 @@ e.g. Dynamic text remain LTR</p>
                     <li>Tap [device] language </li>
                     <li>Select Hebrew or Arabic language from the list. Tap Done <br>
                     <img src="img/iosLanguage.jpg" alt="Select Hebrew or Arabic language from the list"></li>
-                    <li>Confirm your selection. </li>
+                    <li>Confirm your selection </li>
                 </ol>
                 <p>After your device updates the language, it should return to the Home screen and display the language you selected. </p>
             
-            <h3>Setting iOS device Region </h3>
+            <h4>Setting iOS device Region </h4>
                 <ol>
                     <li>Scroll to the bottom of the language list and tap Region </li>
                     <li>Search for Israel for Hebrew or Saudi Arabia for Arabic and tap Done </li>
-                    <li>Confirm your selection. </li>
+                    <li>Confirm your selection</li>
 
                 </ol>
             <p>After your device updates the region, it should return to the list of languages </p>
             <p>Regional format example can be seen at the bottom of Language and Region page  </p>
-            <p><img src="img/HebrewExample.JPG" alt="Hebrew - regional display example"></p>
-            <p><img src="img/ArabicExample.JPG" alt="Arabic - regional display example"></p>
+            <figure>
+                <img src="img/HebrewExample.JPG" alt="Hebrew - regional display example">
+                <figcaption>Hebrew</figcaption>
+            </figure>
+            <figure>
+                <img src="img/ArabicExample.JPG" alt="Arabic - regional display example">
+                <figcaption>Arabic</figcaption>
+            </figure>
 
          <h3>Setting Android device language </h3>
             <ol>
@@ -600,12 +1198,7 @@ e.g. Dynamic text remain LTR</p>
             
             
             <details>
-		  <summary>Interactive elements moving in right or left direction should follow their direction</summary>
-          <p>Examples are vertial separators between windows, right-align and left-align buttons.</p>
-          <p>Here is a "bad example" when cursor is moving one side and vertical separator is moving opposite side. Avoid such behavior!</p>
-		  <p><img src="img/RTLmoving_opposite.gif" width="50%" alt="Vertical window separator is moving opposite side from cursor moving"></p>
-          <p>Please ensure and test manually that if a tool has an arrow showing left side, it should move the element the same side as shown at the icon:</p>
-		  <p><img src="img/RTL_directions_arrows.JPG" width="50%" alt="Right-align and left-align buttons shold be tested manually to make sure that they point proper direction"></p>
+		  
 		</details><br><br>
 
 </div>
