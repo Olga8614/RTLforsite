@@ -27,11 +27,23 @@ html {
 body {
   background-color: #f2f2f2;
   font-family: 'PTSans', Arial, Helvetica, sans-serif;
+    
 }
 
 img {
   max-width: 100%;
   height: auto;
+  margin: 5px;
+}
+figcaption {
+  font-size: 1.25em;
+  text-align: center;
+  font-style: italic;
+}
+
+
+figure {
+    text-align: center;
 }
 
 .visually-hidden:not(:focus):not(:active),
@@ -56,6 +68,8 @@ input[type="radio"].visually-hidden {
   margin-right: auto;
   background-color: #fff;
   border-bottom: 1px solid transparent;
+    padding-left: 20px;
+    padding-right: 20px;
 
 }
 
@@ -64,18 +78,40 @@ input[type="radio"].visually-hidden {
     font-size: 2em;
 }
 
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  background-color: lightgrey;
+    margin-left: auto;
+  margin-right: auto;
+    
+}
 
 table {
   border-collapse: collapse;
   border: 1px solid #fff;
-  width: 314px;
-  height: 32px;
+  margin-bottom: 50px;
+  
+}
+.specCharacters {
+    font-size: 1.5em;
 }
 
-td {
+figure {
+    margin-bottom: 70px;
+}
+caption {
+  font-style: italic;
+    font-size: 0.75em;
+    caption-side: bottom;
+    padding-bottom: 50px;
+    
+}
+
+td, th {
   border: 1px solid #fff;
-  width: 50%;
-  text-align: center;
+  padding: 5px 10px;
+  
 }
 
 
@@ -105,6 +141,14 @@ h3 {
   font-size: 28px;
   text-align: center;
   color: saddlebrown;
+  margin-right: auto;
+  margin-left: auto;
+}
+h4 {
+  font-size: 20px;
+  text-align: left;
+  text-indent: 50px;
+  color: #444;
   margin-right: auto;
   margin-left: auto;
 }
