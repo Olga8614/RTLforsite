@@ -34,7 +34,10 @@ img {
   max-width: 100%;
   height: auto;
   margin: 5px;
+  border: 1px solid grey;
 }
+
+
 figcaption {
   font-size: 1.25em;
   text-align: center;
@@ -80,9 +83,8 @@ input[type="radio"].visually-hidden {
 
 table, th, td {
   border: 1px solid black;
-  border-collapse: collapse;
   background-color: lightgrey;
-    margin-left: auto;
+  margin-left: auto;
   margin-right: auto;
     
 }
@@ -100,27 +102,27 @@ table {
 figure {
     margin-bottom: 70px;
 }
-caption {
-  font-style: italic;
-    font-size: 0.75em;
+caption, figcaption {
+    font-style: italic;
     caption-side: bottom;
     padding-bottom: 50px;
+    font-size: 16px;
     
 }
 
 td, th {
   border: 1px solid #fff;
   padding: 5px 10px;
-  
+  margin-right: auto;
+  margin-left: auto;
+}
+
+li, ol {
+    
+    margin-left: 80px;
 }
 
 
-
-.booking-info {
-  font-size: 14px;
-  margin-bottom: 40px;
-  line-height: 1.75;
-}
 h1 {
   font-size: 36px;
   text-align: center;
