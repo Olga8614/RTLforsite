@@ -28,18 +28,75 @@
                 <li><a href="#forms">Letter Forms and Ligatures</a></li>
                 <li><a href="#punctuation">Punctuation Symbols</a></li>
                 <li><a href="#numerals">Numerals and math</a></li>
-                <li><a href="#dates">Date Formats and Calendars</a></li>
-                <li><a href="#mirrul">General UI Mirroring Rules</a></li>
-                <li><a href="#bugs">MAIN CHALLENGES (MOST COMMON BUGS) DEV TEAM MAY HAVE</a></li>
+                <li><a href="#dates">Date Formats and Calendars</a>
+                    <ul>
+                        <li><a href="#hecal">Hebrew calendar</a></li>
+                        <li><a href="#arcal">Arabic calendar</a></li>
+                        <li><a href="#techn">More technical details about calendars</a>
+                            <ul>
+                                <li><a href="#hecaltyp">Hebrew calendar types</a></li>
+                                <li><a href="#arcaltyp">Arabic calendar types</a></li>
+                                <li><a href="#calvideo">Quick videos explaining how to set your system to the required calendar</a></li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </li>
+                <li><a href="#mirrul">General UI Mirroring Rules</a>
+                    <ul>
+                        <li><a href="#whatmir">What to mirror</a>
+                            <ul>
+                                <li><a href="#dirgraph">Directional graphics</a></li>
+                                <li><a href="#coord">Coordinates</a></li>
+                                <li><a href="#lists">Lists and Legends</a></li>
+                                <li><a href="#menus">Menus, popups and drop-downs</a></li>
+                                <li><a href="#diallay">Dialog layouts</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li><a href="#notmir">What not to mirror</a>
+                            <ul>
+                                <li><a href="#noticons">Share, Import, Export, Download icons</a></li>
+                                <li><a href="#nondir">Non-Directional Graphics, images, trademarks and logos</a></li>
+                                <li><a href="#chartsgraphs">Charts, graphs and Histograms</a></li>
+                                <li><a href="#urls">URLs, File paths and English text</a></li>
+                                <li><a href="#formulas">Formulas, Equations, Scripts and Measurement</a></li>
+                                <li><a href="#modelbuilder">Model builder</a></li>
+                                <li><a href="#altitude">Altitude and Azimuth point</a></li>
+                                <li><a href="#time">Time slider and media control</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#bugs">MAIN CHALLENGES (MOST COMMON BUGS) DEV TEAM MAY HAVE</a>
+                    <ul>
+                        <li><a href="#garbled">Garbled or Artifact Arabic Text</a></li>
+                        <li><a href="#interactive">Interactive elements work in opposition direction</a></li>
+                        <li><a href="#falsebrackets">False alarm to report incorrect parentheses</a></li>
+                        <li><a href="#hex">Contextual Digits</a></li>
+                        <li><a href="#textorder">Broken text order</a></li>
+                        <li><a href="#weekdir">Days of the week go to the wrong direction</a></li>
+                        <li><a href="#nummix">Mixture of Western Arabic and Arabic-Indic numerals</a></li>
+                        <li><a href="#positui">Positioning UI elements</a></li>                        
+                    </ul>
+                </li>
                 <li><a href="#setenvir">How to set up Ar/He environment</a>
                     <ol>
-                        <li><a href="#setenvir">How to set up Ar/He environment</a></li>
-                        <li><a href="#setenvir">How to set up Ar/He environment</a></li>
-                        <li><a href="#setenvir">How to set up Ar/He environment</a></li>
-                        <li><a href="#setenvir">How to set up Ar/He environment</a></li>
-                        <li><a href="#setenvir">How to set up Ar/He environment</a></li>
-                        <li><a href="#setenvir">How to set up Ar/He environment</a></li>
-                        <li><a href="#setenvir">How to set up Ar/He environment</a></li>
+                        <li><a href="#hedesk">Hebrew - ArcGIS Desktop</a></li>
+                        <li><a href="#hepro">Hebrew - ArcGIS Pro</a></li>
+                        <li><a href="#ardesk">Arabic - ArcGIS Desktop</a></li>
+                        <li><a href="#arpro">Arabic - ArcGIS Pro</a></li>
+                        <li><a href="#outlook">How to change Display language in Outlook to find out how other applications handle RTL?</a>
+                        </li>
+                        <li><a href="#mobdevice">How to set up mobile device to test in Hebrew and Arabic</a>
+                            <ul>
+                                <li><a href="#iosl">Setting iOS device language</a></li>
+                                <li><a href="#iosr">Setting iOS device Region</a></li>
+                                <li><a href="#andror">Setting Android device language</a></li>
+                                
+                            </ul>
+                        </li>
+                       
                         <li><a href="#webapp">How to set up environment to test web applications in Hebrew and Arabic</a>
                             <ol>
                                 <li><a href="#agol">ArcGIS Online and Portal UI</a></li>
@@ -1165,7 +1222,7 @@
  
 <h3 id="mobdevice">How to set up mobile device to test in Hebrew and Arabic </h3>
             
-<h4 id="iosl">Setting iOS device language </h4>
+    <h4 id="iosl">Setting iOS device language </h4>
                 <ol>
                     <li>Open Settings</li>
                     <li>Tap General </li>
@@ -1178,7 +1235,7 @@
                 </ol>
                 <p>After your device updates the language, it should return to the Home screen and display the language you selected. </p>
             
-<h4 id=iosr>Setting iOS device Region </h4>
+    <h4 id="iosr">Setting iOS device Region </h4>
                 <ol>
                     <li>Scroll to the bottom of the language list and tap Region </li>
                     <li>Search for Israel for Hebrew or Saudi Arabia for Arabic and tap Done </li>
@@ -1196,7 +1253,7 @@
                 <figcaption>Arabic</figcaption>
             </figure>
 
-<h4 id="andror">Setting Android device language </h4>
+    <h4 id="andror">Setting Android device language </h4>
             <ol>
                 <li>Open Settings </li>
                 <li>Tap General management </li>
@@ -1216,7 +1273,7 @@
                 ArcGIS Online does not inherit language settings from the operation system. Different apps inherit language settings differently.
             </p>
                 
-<h4 id="agol">ArcGIS Online and Portal UI</h4>
+    <h4 id="agol">ArcGIS Online and Portal UI</h4>
             
             <p>
                 Regardless of privileges, user can sign in to his AGOL or Portal organization, click the user icon in the upper right corner and click My Settings. At the General tab, under Language, number, and date format, please click Update and set the desired language. 
@@ -1226,7 +1283,7 @@
                 We recommend to keep this My Settings tab opened and continue UI testing at a different tab. It will allow you to come back to your settings quickly and change the language if needed.
             </p>
             
-<h4 id="anon">Anonymous access to Portals </h4>
+    <h4 id="anon">Anonymous access to Portals </h4>
             <p>
                 Language is inherited from the browser settings, or in some cases from Portal organization settings. It is a good practice to set organization settings matching the language of your target audience. 
             </p>
@@ -1240,7 +1297,7 @@
                 
             </ol>
             
-<h4 id="confapp">Access to configurable applications </h4>
+    <h4 id="confapp">Access to configurable applications </h4>
             <p>
                 Language is inherited from browser settings. 
             </p>
